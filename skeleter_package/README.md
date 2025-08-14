@@ -45,7 +45,7 @@ input_variables:
 parameter_store_map:
   db_password: "/{{ environment }}/database/master_password"
   api_key: "/{{ environment }}/external_api/secret_key"
-  service_config: "/admin-gw/{{ service }}/{{ environment }}/config"
+  service_config: "/admin-app-1/{{ service }}/{{ environment }}/config"
 
 # Required: Map of GitHub repositories to their template files and output paths
 # Both template and output paths support Jinja2 variables
@@ -89,7 +89,7 @@ Map variable names to AWS Systems Manager Parameter Store paths. Parameter paths
 parameter_store_map:
   db_password: "/{{ environment }}/database/master_password"
   api_key: "/{{ environment }}/external_api/secret_key"
-  service_config: "/admin-gw/{{ service }}/{{ environment }}/config"
+  service_config: "/admin-app-1/{{ service }}/{{ environment }}/config"
 ```
 
 **Templated Parameter Paths:**
@@ -171,8 +171,8 @@ python skeleter.py --var service=user-service --var environment=production
 python skeleter.py --var service=payment-service --var environment=staging --var version=2.1.0
 
 # Example showing parameter store path templating:
-# Config: studio: "/admin-gw/{{ service }}/{{ environment }}/config"
-# This will fetch from: "/admin-gw/payment-service/staging/config"
+# Config: studio: "/admin-app-1/{{ service }}/{{ environment }}/config"
+# This will fetch from: "/admin-app-1/payment-service/staging/config"
 ```
 
 ### Command-line Options

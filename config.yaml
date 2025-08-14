@@ -13,7 +13,7 @@ input_variables:
 # Optional: Map of variable names to AWS Systems Manager Parameter Store paths
 # These parameters will be fetched with decryption enabled (medium precedence)
 parameter_store_map:
-  studio: "/gw/{{ service}}/test"
+  studio: "/app-1/{{ service}}/test"
   #db_password: "/production/database/master_password"
   #api_key: "/production/external_api/secret_key"
 

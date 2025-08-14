@@ -7,20 +7,20 @@ input_variables:
   aws_region: "us-west-2"
   aws_studio_region: "us-east-1"
   env_name: "mike"
-  service: "admin-game-os"  # Used in templated paths
+  service: "app-1"  # Used in templated paths
   # config_path: "/path/to/alternative/config.yaml"  # Override config file path
 
 # Optional: Map of variable names to AWS Systems Manager Parameter Store paths
 # These parameters will be fetched with decryption enabled (medium precedence)
 parameter_store_map:
-  studio: "/admin-gw/{{ service}}/test"
+  studio: "/gw/{{ service}}/test"
   #db_password: "/production/database/master_password"
   #api_key: "/production/external_api/secret_key"
 
 # Required: Map of GitHub repositories to their template files and output paths
 # Each repository will be cloned, templates rendered, and a PR created with changes
 templates_map:
-  "git@github.com:platform/infra-devops.git":
+  "git@github.com:platform/test-devops.git":
     "helm/values/skeleton/services/{{ service }}/values.jinja": "helm/values/{{ service }}/{{ env_name }}.yaml"
 
 

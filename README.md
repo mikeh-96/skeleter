@@ -326,7 +326,6 @@ skeleter/
 ├── requirements.txt     # Python dependencies
 ├── README.md            # Documentation
 ├── install.sh           # Installation script
-└── test_skeleter.py     # Test suite
 
 # Note: Templates are now stored in their respective GitHub repositories
 # Output files are committed directly to the target repositories via PRs
